@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "hello"
+
+  build:
+    commands:
+      - echo "Running 'npm install' in the build phase..."
+      - npm install
+      - echo "Finished 'npm install' (and the preinstall script)."
+      - echo "Continue with your other build commands here..."
+
+  post_build:
+    commands:
+    - echo "Post-build phase completed on `date`"
+
+artifacts:
+  files:
+    - '**/*'
